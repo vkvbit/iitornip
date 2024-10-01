@@ -11,7 +11,7 @@ setup(
     download_url='https://github.com/vkvbit/iitornip',
     license='MIT',
     author='Vaibhav Kumar',
-    author_email='',
+    author_email='vthedev@hotmail.com',
     long_description=long_description,
     long_description_content_type='text/markdown',
     keywords=['iitornip', 'onion', 'tor', 'tor nodes', 'tor exit nodes'],    

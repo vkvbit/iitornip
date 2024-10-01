@@ -7,9 +7,7 @@ name = "iitornip"
 version = "0.1"
 description = "A Python-based tool to check IP addresses are or are not Tor nodes."
 readme = "README.md"
-readme-content-type = "text/markdown"
-authors = [{ name = "Vaibhav Kumar", email = ""}]
-homepage = "https://github.com/vkvbit/iitornip"
+authors = [{ name = "Vaibhav Kumar", email = "vthedev@hotmail.com"}]
 license = { text = "" }
 keywords = ["iitornip", "onion", "tor", "tor nodes", "tor exit nodes"]
 
