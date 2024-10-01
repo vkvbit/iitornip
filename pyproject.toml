@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iitornip"
+version = "0.1"
+description = "A Python-based tool to check IP addresses are or are not Tor nodes."
+readme = "README.md"
+readme-content-type = "text/markdown"
+authors = [{ name = "Vaibhav Kumar", email = ""}]
+homepage = "https://github.com/vkvbit/iitornip"
+license = { text = "" }
+keywords = ["iitornip", "onion", "tor", "tor nodes", "tor exit nodes"]
+
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Security Analysts",
+    "Intended Audience :: Security Researchers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.scripts]
+iitornip = "iitornip.__main__:cli"
