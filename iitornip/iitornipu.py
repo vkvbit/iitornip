@@ -1,18 +1,35 @@
-from . import all_nodes, exit_node
+from . import fetch_nodes
+import sqlite3
+
+
+def create_sqlite():
+    sqlite_db = sqlite3.connect('iitornip/iitornip.db')
+    return sqlite_db
+
+def create_table(sqlite_db):
+    with sqlite_db:
+        sqlite_db.execute('''
+            CREATE TABLE IF NOT EXISTS all_nodes (
+                id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                ip TEXT NOT NULL
+            );
+        ''')
+        sqlite_db.execute('''
+            CREATE TABLE IF NOT EXISTS exit_nodes (
+                id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                ip TEXT NOT NULL
+            );
+        ''')
+def insert_data(sqlite_db, node, data):
+    with sqlite_db:
+        for node_ip in data:
+            if node_ip:
+                sqlite_db.execute(f'INSERT INTO {node} (ip) VALUES (?);', (node_ip,))
+
 
 def update_db():
-    update_all = all_nodes.all_nodes()
-    if update_all == True:
-        all = 1
-    else:
-        all = 0
-    update_exit = exit_node.exit_node()
-    if update_exit == True:
-        exit = 1
-    else:
-        exit = 0
-    
-    if all == 1 and exit == 1:
-        return True
-    else:
-        return False
+    update_all = fetch_nodes.fetch_node('all')
+    update_exit = fetch_nodes.fetch_node('exit')
+    all = True if update_all == True else False
+    exit = True if update_exit == True else False
+    return all and exit

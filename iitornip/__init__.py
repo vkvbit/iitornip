@@ -1,21 +1,16 @@
-from . import all_nodes, exit_node
+from . import fetch_nodes
 import sys
 import os
 
 
 def iitornip(input_ip, node):
-    exit_file = 'db/exit_nodes.txt'
-    all_file = 'db/tor_nodes.txt'
-    if os.path.exists(all_file) and os.path.exists(exit_file):
-        if node == 'all':
-            return all_nodes.check_all_nodes(input_ip)
-        elif node == 'exit':
-            return exit_node.check_exit_node(input_ip)
-        else:
-            return "Invalid node type. Please use all or exit."
+    if node == 'all':
+        return fetch_nodes.check_node(input_ip, node)
+    elif node == 'exit':
+        return fetch_nodes.check_node(input_ip, node)
     else:
-        print('Database files not found. Please update the database first.')
-        sys.exit()
+        return "Invalid node type. Please use all or exit."
+
     
 
 
