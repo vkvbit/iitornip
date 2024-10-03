@@ -5,13 +5,13 @@ with open('README.md') as file:
 
 setup(
     name='iitornip',
-    version='0.1',
+    version='1.0.0',
     packages=['iitornip'],
     url='https://github.com/vkvbit/iitornip',
     download_url='https://github.com/vkvbit/iitornip',
     license='MIT',
     author='Vaibhav Kumar',
-    author_email='vthedev@hotmail.com',
+    author_email='myselfv@hotmail.com',
     long_description=long_description,
     long_description_content_type='text/markdown',
     keywords=['iitornip', 'onion', 'tor', 'tor nodes', 'tor exit nodes'],    
@@ -22,8 +22,6 @@ setup(
     },
     classifiers=[
         'Intended Audience :: Developers',
-        'Intended Audience :: Security Analysts',
-        'Intended Audience :: Security Researchers',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
